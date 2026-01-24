@@ -4,22 +4,28 @@ class Solution:
         n = len(nums)
         permut = []
         res = []
-        idx = set()
+        visited = [False]*n
 
         def compute() -> None:
 
-            if len(idx) == n:
+            if len(permut) == n:
                 res.append(permut.copy())
             
             for i in range(n):
 
-                if i not in idx:
-                    permut.append(nums[i])
-                    idx.add(i)
-                    compute()
-                    permut.pop()
-                    idx.remove(i)
+                if visited[i]:
+                    continue
+
+                if i > 0 and nums[i] == nums[i-1] and not visited[i]:
+                    continue
+                
+                permut.append(nums[i])
+                visited[i] = True
+                compute()
+                permut.pop()
+                visited[i] = False
         
         compute()
+
         return res
         
