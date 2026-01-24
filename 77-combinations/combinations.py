@@ -9,10 +9,7 @@ class Solution:
             if j == k:
                 res.append(path.copy())
             
-            for i in range(1,n+1):
-
-                if i <= pos:
-                    continue
+            for i in range(pos+1,n+1):
                 
                 path.append(i)
                 helper(i, j+1)
