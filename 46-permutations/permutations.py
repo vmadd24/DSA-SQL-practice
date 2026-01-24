@@ -9,6 +9,8 @@ class Solution:
         def compute() -> None:
 
             if len(idx) == n:
+                if permut in res:
+                    return
                 res.append(permut.copy())
             
             for i in range(n):
