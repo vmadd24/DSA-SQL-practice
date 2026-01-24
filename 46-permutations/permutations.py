@@ -13,10 +13,7 @@ class Solution:
             
             for i in range(n):
 
-                if visited[i]:
-                    continue
-
-                if i > 0 and nums[i] == nums[i-1] and not visited[i]:
+                if visited[i] or (i > 0 and nums[i] == nums[i-1] and not visited[i]):
                     continue
                 
                 permut.append(nums[i])
