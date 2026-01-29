@@ -15,9 +15,6 @@ class Solution:
 
             if root == None:
                 return 0
-            
-            if root.left == None and root.right == None:
-                return 1
 
             left_len = dfs(root.left)
             right_len = dfs(root.right)
