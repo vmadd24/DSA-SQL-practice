@@ -19,11 +19,7 @@ class Solution:
 
         right = self.lowestCommonAncestor(root.right, p , q)
 
-        if left == None:
-            return right
-        
-        elif right == None:
-            return left
-        
-        else:
+        if left and right:
             return root
+
+        return left or right
