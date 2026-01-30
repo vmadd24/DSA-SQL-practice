@@ -8,7 +8,7 @@ class Solution:
 
             mid = (l+r)//2
 
-            if nums[mid] >= nums[l] and nums[mid] > nums[r]:
+            if nums[mid] > nums[r]:
                 l = mid+1
             
             else:
