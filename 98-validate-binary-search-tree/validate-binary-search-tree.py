@@ -8,7 +8,7 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         
         
-        def dfs(root: Optional[TreeNode], min_node: Optional[TreeNode], max_node: Optional[TreeNode]):
+        def checkBST(root: Optional[TreeNode], min_node: Optional[TreeNode], max_node: Optional[TreeNode]):
 
             if root == None:
                 return True
@@ -19,7 +19,7 @@ class Solution:
             if max_node and root.val >= max_node.val:
                 return False
             
-            return dfs(root.left, min_node, root) and dfs(root.right, root, max_node)
+            return checkBST(root.left, min_node, root) and checkBST(root.right, root, max_node)
         
 
-        return dfs(root, None, None)
+        return checkBST(root, None, None)
