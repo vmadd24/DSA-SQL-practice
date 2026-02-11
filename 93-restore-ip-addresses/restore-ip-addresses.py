@@ -18,7 +18,7 @@ class Solution:
             for pos in range(1,4):
 
                 if idx+pos>n:
-                    continue
+                    return
 
                 seg = s[idx:idx+pos]
                 if isValid(seg):
