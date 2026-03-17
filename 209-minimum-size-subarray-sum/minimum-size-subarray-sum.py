@@ -9,12 +9,12 @@ class Solution:
 
         while r < n:
 
-            if s < target:
+            if s < target and r < n-1:
                 r += 1
-                if r < n:
-                    s += nums[r]
-                else:
-                    break
+                s += nums[r]
+            
+            elif s < target and r == n-1:
+                break
             
             else:
                 min_len = min(min_len, r-l+1)
